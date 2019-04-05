@@ -1,0 +1,22 @@
+<h4>Ubicación</h4>
+<mat-form-field [formGroup]="ubicacionForm">
+  <mat-label>Pais</mat-label>
+  <select matNativeControl  formControlName="pais" (change)="cambiarPais()">
+    <option value="">-- Sin seleccionar --</option>
+    <option *ngFor="let pais of paises" [value]="pais.id">
+      {{pais.descripcion}}
+    </option>
+  </select>
+</mat-form-field>  
+<mat-form-field [formGroup]="ubicacionForm">
+  <mat-label>Provincia</mat-label>
+  <select matNativeControl  formControlName="provincia" (change)="cambiarProvincia()">
+    <option value="">-- Sin seleccionar --</option>
+    <option *ngFor="let prov of provincias" [value]="prov.id">
+      {{prov.descripcion}}
+    </option>
+  </select>
+</mat-form-field>
+<br />
+{{texto}}
+<router-outlet></router-outlet>
